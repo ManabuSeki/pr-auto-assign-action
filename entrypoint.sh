@@ -1,8 +1,8 @@
 #!/bin/sh
 set -euo pipefail
 echo "--> Setup env"
-export CI_PULL_REQUEST=$(cat $GITHUB_EVENT_PATH | jq -r .number)
-export CI_REPO_REF=$GITHUB_SHA
+export CI_PULL_REQUEST_ID=$(cat $GITHUB_EVENT_PATH | jq -r .number)
+export CI_REPO_REF=$GITHUB_REF
 export CI_REPO_OWNER=$(cat $GITHUB_EVENT_PATH | jq -r .repository.owner.login)
 export CI_REPO_NAME=$(cat $GITHUB_EVENT_PATH | jq -r .repository.name)
 export GITHUB_TOKEN="${INPUT_GITHUB_TOKEN}"
