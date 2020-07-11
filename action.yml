@@ -1,0 +1,17 @@
+name: 'Run pr-auto-assign'
+description: 'Add reviewers to pull requests.'
+author: 'ManabuSeki'
+inputs:
+  github_token:
+    description: 'GITHUB_TOKEN.'
+    required: true
+    default: ${{ github.token }}
+  config_path:
+    description: 'A path for the auto-assign configuration'
+    default: '.github/auto_assign.yml'
+runs:
+  using: 'docker'
+  image: 'Dockerfile'
+branding:
+  icon: 'user-plus'
+  color: 'blue'
