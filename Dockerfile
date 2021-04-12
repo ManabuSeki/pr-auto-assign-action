@@ -1,6 +1,6 @@
 FROM alpine:3.12
 
-ENV PR_AUTO_ASSIGN_VERSION=v0.0.2
+ENV PR_AUTO_ASSIGN_VERSION=v0.0.3
 
 RUN apk add --no-cache --virtual=build-deps wget unzip && \
   wget https://github.com/stedolan/jq/releases/download/jq-1.6/jq-linux64 && \
